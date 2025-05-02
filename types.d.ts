@@ -1,2 +1,2 @@
-declare module "fs-extra";
-declare module "webpack";
+// declare module "fs-extra";
+// declare module "webpack";
