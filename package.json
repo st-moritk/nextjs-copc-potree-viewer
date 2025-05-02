@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build && npm run export"
   },
   "dependencies": {
     "cesium": "^1.128.0",
@@ -28,6 +29,7 @@
     "@types/three": "^0.176.0",
     "eslint": "^9",
     "eslint-config-next": "15.3.1",
+    "gh-pages": "^6.3.0",
     "potree": "^0.1.0",
     "tailwindcss": "^4",
     "typescript": "^5"
