@@ -7,8 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "export": "next export",
-    "predeploy": "npm run build && npm run export"
+    "predeploy": "npm run build"
   },
   "dependencies": {
     "cesium": "^1.128.0",

@@ -2,7 +2,9 @@
 const repo = process.env.GITHUB_REPOSITORY?.split("/")[1] || "";
 
 module.exports = {
-  output: "export", // 静的エクスポートモードに切り替え
+  // 静的エクスポートモードに切り替え
+  output: "export",
+  // リポジトリ名がサブパスになる場合の設定
   basePath: repo ? `/${repo}` : "",
   assetPrefix: repo ? `/${repo}/` : "",
 };
