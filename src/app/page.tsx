@@ -1,5 +1,3 @@
-// app/page.tsx
-"use client";
 import Script from "next/script";
 import getConfig from "next/config";
 import PotreeScene from "@/components/PotreeScene";
