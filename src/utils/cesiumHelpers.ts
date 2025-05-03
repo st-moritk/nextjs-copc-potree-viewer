@@ -4,11 +4,13 @@ import { CESIUM_CONFIG } from "../config/viewerConfig";
 // TypeScript型定義の警告を抑制
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 /**
  * Cesiumビューワーを初期化して返す
  */
 export function initCesiumViewer(container: HTMLDivElement) {
-  window.Cesium.buildModuleUrl.setBaseUrl("/potree/libs/Cesium/");
+  window.Cesium.buildModuleUrl.setBaseUrl(basePath + "/potree/libs/Cesium/");
 
   return new window.Cesium.Viewer(container, {
     useDefaultRenderLoop: false,
