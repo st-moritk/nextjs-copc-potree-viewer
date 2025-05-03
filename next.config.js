@@ -7,4 +7,7 @@ module.exports = {
   // リポジトリ名がサブパスになる場合の設定
   basePath: repo ? `/${repo}` : "",
   assetPrefix: repo ? `/${repo}/` : "",
+  publicRuntimeConfig: {
+    basePath: repo ? `/${repo}` : "",
+  },
 };
