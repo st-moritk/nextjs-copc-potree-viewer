@@ -1,14 +1,13 @@
+"use client";
+
 import Script from "next/script";
-import getConfig from "next/config";
 import PotreeScene from "@/components/PotreeScene";
 
 export default function Page() {
-  const { publicRuntimeConfig } = getConfig() || {};
-  const basePath = publicRuntimeConfig?.basePath || "";
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
   return (
     <>
-      {/* Potree / Cesium のスクリプトを一括読み込み */}
       <Script
         src={`${basePath}/potree/libs/jquery/jquery-3.1.1.min.js`}
         strategy="beforeInteractive"

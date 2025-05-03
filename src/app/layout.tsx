@@ -12,10 +12,17 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     <html lang="en">
       <head>
         {/* Potree CSS */}
-        <link rel="stylesheet" href="/potree/potree/potree.css" />
         <link
           rel="stylesheet"
-          href="/potree/libs/jquery-ui/jquery-ui.min.css"
+          href={`${
+            process.env.NEXT_PUBLIC_BASE_PATH || ""
+          }/potree/potree/potree.css`}
+        />
+        <link
+          rel="stylesheet"
+          href={`${
+            process.env.NEXT_PUBLIC_BASE_PATH || ""
+          }/potree/libs/jquery-ui/jquery-ui.min.css`}
         />
       </head>
       <body>{children}</body>
