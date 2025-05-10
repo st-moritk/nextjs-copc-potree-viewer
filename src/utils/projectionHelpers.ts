@@ -9,7 +9,7 @@
  */
 export function createProjTransformer(
   srcProjection: string,
-  destDefName: string = "WGS84"
+  destDefName: string = "EPSG:4326"
 ) {
   const destProj = window.proj4.defs(destDefName);
   const toMap = window.proj4(srcProjection, destProj);

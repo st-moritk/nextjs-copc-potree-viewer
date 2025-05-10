@@ -38,6 +38,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             left: 0 !important;
             width: 100% !important;
             height: 100% !important;
+            pointer-events: none !important;
           }
         `,
           }}

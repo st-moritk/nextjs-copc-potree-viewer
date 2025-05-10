@@ -28,6 +28,7 @@ export function initCesiumViewer(container: HTMLDivElement) {
       url: "https://a.tile.openstreetmap.org/",
     }),
     terrainShadows: window.Cesium.ShadowMode.DISABLED,
+    sceneMode: window.Cesium.SceneMode.SCENE3D,
   });
 }
 

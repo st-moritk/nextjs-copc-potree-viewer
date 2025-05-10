@@ -67,23 +67,14 @@ export function startSyncLoop(
       });
 
       const aspect = potreeViewer.scene.getActiveCamera().aspect;
+      const fovy = window.Cesium.Math.toRadians(camera.fov);
       if (aspect < 1) {
         // 縦長ウィンドウの場合
-        const fovy = Math.PI * (potreeViewer.scene.getActiveCamera().fov / 180);
         cesiumViewer.camera.frustum.fov = fovy;
       } else {
         // 横長ウィンドウの場合
-        const fovy = Math.PI * (potreeViewer.scene.getActiveCamera().fov / 180);
         const fovx = Math.atan(Math.tan(0.5 * fovy) * aspect) * 2;
         cesiumViewer.camera.frustum.fov = fovx;
-      }
-
-      if (SYNC_CONFIG.DEBUG_MODE) {
-        console.log("Camera sync:", {
-          potreePos: [potreePosition.x, potreePosition.y, potreePosition.z],
-          cesiumPos: [cesiumPosition.x, cesiumPosition.y, cesiumPosition.z],
-          aspect,
-        });
       }
 
       cesiumViewer.render();
