@@ -24,6 +24,24 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             process.env.NEXT_PUBLIC_BASE_PATH || ""
           }/potree/libs/jquery-ui/jquery-ui.min.css`}
         />
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+          html, body, #__next {
+            margin: 0 !important;
+            padding: 0 !important;
+            height: 100% !important;
+          }
+          .cesium-viewer-cesiumWidgetContainer, .cesium-viewer-cesiumWidgetContainer canvas {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+          }
+        `,
+          }}
+        />
       </head>
       <body>{children}</body>
     </html>
